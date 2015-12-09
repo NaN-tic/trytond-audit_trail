@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<form string="Session Event">
+    <label name="user"/>
+    <field name="user"/>
+    <label name="key"/>
+    <field name="key"/>
+    <label name="login"/>
+    <field name="login"/>
+    <label name="logout"/>
+    <field name="logout"/>
+</form>

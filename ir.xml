@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="session_event_view_form">
+            <field name="model">ir.session.event</field>
+            <field name="type">form</field>
+            <field name="name">session_event_form</field>
+        </record>
+        <record model="ir.ui.view" id="session_event_view_tree">
+            <field name="model">ir.session.event</field>
+            <field name="type">tree</field>
+            <field name="name">session_event_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_session_event_form">
+            <field name="name">Session Events</field>
+            <field name="type">ir.action.act_window</field>
+            <field name="res_model">ir.session.event</field>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_session_event_form_view1">
+            <field name="sequence" eval="1"/>
+            <field name="view" ref="session_event_view_tree"/>
+            <field name="act_window" ref="act_session_event_form"/>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_session_event_form_view2">
+            <field name="sequence" eval="2"/>
+            <field name="view" ref="session_event_view_form"/>
+            <field name="act_window" ref="act_session_event_form"/>
+        </record>
+
+        <record model="ir.model.access" id="access_session_event">
+            <field name="model" search="[('model', '=', 'ir.session.event')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <menuitem name="Session Events" parent="res.menu_res"
+            action="act_session_event_form" id="menu_session_events"/>
+
+        <record model="ir.ui.menu-res.group" id="menu_event_group_admin">
+            <field name="menu" ref="menu_session_events"/>
+            <field name="group" ref="res.group_admin"/>
+        </record>
+    </data>
+</tryton>
