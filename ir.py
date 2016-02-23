@@ -11,29 +11,29 @@ __metaclass__ = PoolMeta
 class Session:
     __name__ = 'ir.session'
 
-    # @classmethod
-    # def create(cls, vlist):
-    #     pool = Pool()
-    #     Event = pool.get('ir.session.event')
-    #     records = super(Session, cls).create(vlist)
-    #     to_create = []
-    #     for record in records:
-    #         to_create.append({'key': record.key})
-    #     if to_create:
-    #         with Transaction().set_context(_check_access=False):
-    #             Event.create(to_create)
-    #     return records
+    @classmethod
+    def create(cls, vlist):
+        pool = Pool()
+        Event = pool.get('ir.session.event')
+        records = super(Session, cls).create(vlist)
+        to_create = []
+        for record in records:
+            to_create.append({'key': record.key})
+        if to_create:
+            with Transaction().set_context(_check_access=False):
+                Event.create(to_create)
+        return records
 
-    # @classmethod
-    # def delete(cls, sessions):
-    #     pool = Pool()
-    #     Event = pool.get('ir.session.event')
-    #     keys = []
-    #     for session in sessions:
-    #         keys.append(session.key)
-    #     events = Event.search([('key', 'in', keys)])
-    #     with Transaction().set_context(_check_access=False):
-    #         Event.write(events, {})
+    @classmethod
+    def delete(cls, sessions):
+        pool = Pool()
+        Event = pool.get('ir.session.event')
+        keys = []
+        for session in sessions:
+            keys.append(session.key)
+        events = Event.search([('key', 'in', keys), ('write_date', '=', None)])
+        with Transaction().set_context(_check_access=False):
+            Event.write(events, {})
 
 
 class SessionEvent(ModelSQL, ModelView):
@@ -52,20 +52,20 @@ class SessionEvent(ModelSQL, ModelView):
             'user': 'create_uid',
             }
 
-    # @classmethod
-    # def get_audit_field(cls, events, names):
-    #     result = {}
-    #     event_ids = [e.id for e in events]
-    #     for name in names:
-    #         result[name] = {}.fromkeys(event_ids, None)
-    #     for event in events:
-    #         for name in names:
-    #             value = getattr(event, cls._field_mapping[name])
-    #             if isinstance(value, Model):
-    #                 value = value.id
-    #             result[name][event.id] = value
-    #     return result
+    @classmethod
+    def get_audit_field(cls, events, names):
+        result = {}
+        event_ids = [e.id for e in events]
+        for name in names:
+            result[name] = {}.fromkeys(event_ids, None)
+        for event in events:
+            for name in names:
+                value = getattr(event, cls._field_mapping[name])
+                if isinstance(value, Model):
+                    value = value.id
+                result[name][event.id] = value
+        return result
 
-    # @classmethod
-    # def search_audit_field(cls, name, clause):
-    #     return [(cls._field_mapping.get(name),) + tuple(clause[1:])]
+    @classmethod
+    def search_audit_field(cls, name, clause):
+        return [(cls._field_mapping.get(name),) + tuple(clause[1:])]
