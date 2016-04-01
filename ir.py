@@ -34,6 +34,7 @@ class Session:
         events = Event.search([('key', 'in', keys), ('write_date', '=', None)])
         with Transaction().set_context(_check_access=False):
             Event.write(events, {})
+        super(Session, cls).delete(sessions)
 
 
 class SessionEvent(ModelSQL, ModelView):
