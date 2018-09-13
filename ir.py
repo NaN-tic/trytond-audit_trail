@@ -5,17 +5,19 @@ from trytond.model import ModelSQL, ModelView, Model, fields
 from trytond.transaction import Transaction
 
 __all__ = ['Session', 'SessionEvent']
-__metaclass__ = PoolMeta
 
 
 class Session:
+    __metaclass__ = PoolMeta
     __name__ = 'ir.session'
 
     @classmethod
     def create(cls, vlist):
         pool = Pool()
         Event = pool.get('ir.session.event')
+
         records = super(Session, cls).create(vlist)
+
         to_create = []
         for record in records:
             to_create.append({'key': record.key})
@@ -28,6 +30,7 @@ class Session:
     def delete(cls, sessions):
         pool = Pool()
         Event = pool.get('ir.session.event')
+
         keys = []
         for session in sessions:
             keys.append(session.key)
