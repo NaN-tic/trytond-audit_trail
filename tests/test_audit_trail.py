@@ -7,8 +7,8 @@ from trytond.tests.test_tryton import ModuleTestCase, with_transaction
 from trytond.transaction import Transaction
 
 
-class TestCase(ModuleTestCase):
-    'Test module'
+class AuditTrailTestCase(ModuleTestCase):
+    'Test Audit Trail module'
     module = 'audit_trail'
 
     @with_transaction()
@@ -41,5 +41,5 @@ class TestCase(ModuleTestCase):
 
 def suite():
     suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestCase))
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(AuditTrailTestCase))
     return suite
