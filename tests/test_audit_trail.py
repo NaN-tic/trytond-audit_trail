@@ -20,7 +20,7 @@ class AuditTrailTestCase(ModuleTestCase):
         user, = User.create([{
                     'name': 'Test User',
                     'login': 'test',
-                    'password': '123456',
+                    'password': 'NaN-123456',
                     }])
         user_id = user.id
         with Transaction().set_user(user_id):
