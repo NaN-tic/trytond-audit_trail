@@ -7,8 +7,7 @@ from trytond.transaction import Transaction
 __all__ = ['Session', 'SessionEvent']
 
 
-class Session:
-    __metaclass__ = PoolMeta
+class Session(metaclass=PoolMeta):
     __name__ = 'ir.session'
 
     @classmethod
