@@ -16,7 +16,7 @@ msgstr "ID"
 
 msgctxt "field:ir.session.event,key:"
 msgid "Session Key"
-msgstr "Identificador de sessión"
+msgstr "Identificador de sesión"
 
 msgctxt "field:ir.session.event,login:"
 msgid "Login Date"
@@ -44,20 +44,20 @@ msgstr "Usuario de modificación"
 
 msgctxt "model:ir.action,name:act_session_event_form"
 msgid "Session Events"
-msgstr "Eventos de sessión"
+msgstr "Eventos de sesión"
 
 msgctxt "model:ir.session.event,name:"
 msgid "Session Event"
-msgstr "Evento de sessión"
+msgstr "Evento de sesión"
 
 msgctxt "model:ir.ui.menu,name:menu_session_events"
 msgid "Session Events"
-msgstr "Eventos de sessión"
+msgstr "Eventos de sesión"
 
 msgctxt "view:ir.session.event:"
 msgid "Session Event"
-msgstr "Evento de sessión"
+msgstr "Evento de sesión"
 
 msgctxt "view:ir.session.event:"
 msgid "Session Events"
-msgstr "Eventos de sessión"
+msgstr "Eventos de sesión"
