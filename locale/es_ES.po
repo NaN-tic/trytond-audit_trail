@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -12,19 +12,19 @@ msgstr "Usuario de creación"
 
 msgctxt "field:ir.session.event,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:ir.session.event,key:"
 msgid "Session Key"
-msgstr "Identificador sessión"
+msgstr "Identificador de sessión"
 
 msgctxt "field:ir.session.event,login:"
 msgid "Login Date"
-msgstr "Fecha conexión"
+msgstr "Fecha de conexión"
 
 msgctxt "field:ir.session.event,logout:"
 msgid "Logout Date"
-msgstr "Fecha desconexión"
+msgstr "Fecha de desconexión"
 
 msgctxt "field:ir.session.event,rec_name:"
 msgid "Name"
@@ -36,11 +36,11 @@ msgstr "Usuario"
 
 msgctxt "field:ir.session.event,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:ir.session.event,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "model:ir.action,name:act_session_event_form"
 msgid "Session Events"
