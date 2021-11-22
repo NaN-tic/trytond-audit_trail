@@ -4,6 +4,8 @@
 <tree>
     <field name="user"/>
     <field name="key"/>
-    <field name="login"/>
-    <field name="logout"/>
+    <field name="login" widget="date"/>
+    <field name="login" widget="time"/>
+    <field name="logout" widget="date"/>
+    <field name="logout" widget="time"/>
 </tree>
