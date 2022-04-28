@@ -1,14 +1,14 @@
-# The COPYRIGHT file at the top level of this repository contains the full
-# copyright notices and license terms.
-import unittest
-import trytond.tests.test_tryton
+
+# This file is part of Tryton.  The COPYRIGHT file at the top level of
+# this repository contains the full copyright notices and license terms.
+
 from trytond.pool import Pool
 from trytond.tests.test_tryton import ModuleTestCase, with_transaction
 from trytond.transaction import Transaction
 
 
 class AuditTrailTestCase(ModuleTestCase):
-    'Test Audit Trail module'
+    'Test AuditTrail module'
     module = 'audit_trail'
 
     @with_transaction()
@@ -39,7 +39,4 @@ class AuditTrailTestCase(ModuleTestCase):
             self.assertEqual(event.logout, event.write_date)
 
 
-def suite():
-    suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(AuditTrailTestCase))
-    return suite
+del ModuleTestCase
