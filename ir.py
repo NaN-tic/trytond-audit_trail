@@ -48,7 +48,7 @@ class SessionEvent(ModelSQL, ModelView):
         'get_audit_field', searcher='search_audit_field')
     logout = fields.Function(fields.DateTime('Logout Date'),
         'get_audit_field', searcher='search_audit_field')
-    key = fields.Char('Session Key', required=True, select=True)
+    key = fields.Char('Session Key', required=True)
     _field_mapping = {
             'login': 'create_date',
             'logout': 'write_date',
