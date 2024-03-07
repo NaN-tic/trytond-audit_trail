@@ -1,0 +1,8 @@
+<tree>
+    <field name="user"/>
+    <field name="type"/>
+    <field name="model"/>
+    <field name="operation"/>
+    <field name="record_ids"/>
+    <field name="request"/>
+</tree>

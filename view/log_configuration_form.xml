@@ -1,0 +1,5 @@
+<form>
+    <label name="notification_mail"/>
+    <field name="notification_mail"/>
+    <field name="models"/>
+</form>

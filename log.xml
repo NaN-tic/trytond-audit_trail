@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <!-- audit_trail.log -->
+        <record model="ir.ui.view" id="log_view_form">
+            <field name="model">audit_trail.log</field>
+            <field name="type">form</field>
+            <field name="name">log_form</field>
+        </record>
+        <record model="ir.ui.view" id="log_view_tree">
+            <field name="model">audit_trail.log</field>
+            <field name="type">tree</field>
+            <field name="name">log_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_log_form">
+            <field name="name">Audit Trail</field>
+            <field name="type">ir.action.act_window</field>
+            <field name="res_model">audit_trail.log</field>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_log_form_view1">
+            <field name="sequence" eval="1"/>
+            <field name="view" ref="log_view_tree"/>
+            <field name="act_window" ref="act_log_form"/>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_log_form_view2">
+            <field name="sequence" eval="2"/>
+            <field name="view" ref="log_view_form"/>
+            <field name="act_window" ref="act_log_form"/>
+        </record>
+
+        <record model="ir.model.access" id="access_log">
+            <field name="model" search="[('model', '=', 'audit_trail.log')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <menuitem name="Audit Trail" parent="res.menu_res"
+            action="act_log_form" id="menu_log"/>
+        <record model="ir.ui.menu-res.group" id="menu_log_group_admin">
+            <field name="menu" ref="menu_log"/>
+            <field name="group" ref="res.group_admin"/>
+        </record>
+
+        <!-- audit_trail.log.configuration -->
+        <record model="ir.ui.view" id="log_configuration_view_form">
+            <field name="model">audit_trail.log.configuration</field>
+            <field name="type">form</field>
+            <field name="name">log_configuration_form</field>
+        </record>
+        <record model="ir.action.act_window" id="act_log_configuration_form">
+            <field name="name">Audit Trail Configuration</field>
+            <field name="type">ir.action.act_window</field>
+            <field name="res_model">audit_trail.log.configuration</field>
+        </record>
+
+        <record model="ir.action.act_window.view"
+            id="act_log_configuration_form_view1">
+            <field name="sequence" eval="1"/>
+            <field name="view" ref="log_configuration_view_form"/>
+            <field name="act_window" ref="act_log_configuration_form"/>
+        </record>
+
+        <menuitem name="Audit Trail Configuration" parent="res.menu_res"
+            action="act_log_configuration_form" id="menu_log_configuration"/>
+        <record model="ir.ui.menu-res.group" id="menu_log_configuration_group_admin">
+            <field name="menu" ref="menu_log_configuration"/>
+            <field name="group" ref="res.group_admin"/>
+        </record>
+
+        <!-- audit_trail.log.configuration.model -->
+        <record model="ir.ui.view" id="log_configuration_model_view_form">
+            <field name="model">audit_trail.log.configuration.model</field>
+            <field name="type">form</field>
+            <field name="name">log_configuration_model_form</field>
+        </record>
+        <record model="ir.ui.view" id="log_configuration_model_view_tree">
+            <field name="model">audit_trail.log.configuration.model</field>
+            <field name="type">tree</field>
+            <field name="name">log_configuration_model_list</field>
+        </record>
+    </data>
+</tryton>
