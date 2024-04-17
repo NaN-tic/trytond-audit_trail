@@ -32,7 +32,7 @@ this repository contains the full copyright notices and license terms. -->
         </record>
 
         <record model="ir.model.access" id="access_session_event">
-            <field name="model" search="[('model', '=', 'ir.session.event')]"/>
+            <field name="model">ir.session.event</field>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
