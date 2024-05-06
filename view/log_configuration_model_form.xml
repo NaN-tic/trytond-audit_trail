@@ -1,0 +1,11 @@
+<form>
+    <label name="configuration"/>
+    <field name="configuration"/>
+    <newline/>
+    <label name="model"/>
+    <field name="model"/>
+    <label name="operation"/>
+    <field name="operation"/>
+    <label name="number"/>
+    <field name="number"/>
+</form>
