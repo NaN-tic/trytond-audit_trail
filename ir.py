@@ -4,8 +4,6 @@ from trytond.pool import Pool, PoolMeta
 from trytond.model import ModelSQL, ModelView, Model, fields
 from trytond.transaction import Transaction
 
-__all__ = ['Session', 'SessionEvent']
-
 
 class Session(metaclass=PoolMeta):
     __name__ = 'ir.session'
@@ -15,7 +13,7 @@ class Session(metaclass=PoolMeta):
         pool = Pool()
         Event = pool.get('ir.session.event')
 
-        records = super(Session, cls).create(vlist)
+        records = super().create(vlist)
 
         to_create = []
         for record in records:
@@ -36,7 +34,7 @@ class Session(metaclass=PoolMeta):
         events = Event.search([('key', 'in', keys), ('write_date', '=', None)])
         with Transaction().set_context(_check_access=False):
             Event.write(events, {})
-        super(Session, cls).delete(sessions)
+        super().delete(sessions)
 
 
 class SessionEvent(ModelSQL, ModelView):
