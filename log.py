@@ -4,7 +4,6 @@ import trytond.protocols.dispatcher
 from trytond.transaction import Transaction
 from trytond.config import config
 from trytond.cache import Cache
-from datetime import datetime
 
 
 class Log(ModelSQL, ModelView):
@@ -80,17 +79,14 @@ original_dispatch = trytond.protocols.dispatcher._dispatch
 def custom_dispatch(request, pool, *args, **kwargs):
     result = original_dispatch(request, pool, *args, **kwargs)
     user = request.user_id
-    with Transaction().start(pool, user, readonly=False) as transaction:
+    with Transaction().start(pool, user, readonly=False):
         _pool = Pool()
         LogConfiguration = _pool.get('audit_trail.log.configuration')
         model_operation = LogConfiguration._rules_cache.get('key')
         if not model_operation:
-            print('Cache miss')
             log_config = LogConfiguration(1)
             model_operation = [(m.model.model, m.operation) for m in log_config.models]
             LogConfiguration._rules_cache.set('key', model_operation)
-        else:
-            print('Cache hit')
         for model, operation in model_operation:
             event = 'model.' + model + '.' + operation
             if event in str(request):
