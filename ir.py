@@ -42,9 +42,9 @@ class SessionEvent(ModelSQL, ModelView):
     __name__ = 'ir.session.event'
     user = fields.Function(fields.Many2One('res.user', 'User'),
         'get_audit_field', searcher='search_audit_field')
-    login = fields.Function(fields.DateTime('Login Date'),
+    login = fields.Function(fields.Timestamp('Login Date'),
         'get_audit_field', searcher='search_audit_field')
-    logout = fields.Function(fields.DateTime('Logout Date'),
+    logout = fields.Function(fields.Timestamp('Logout Date'),
         'get_audit_field', searcher='search_audit_field')
     key = fields.Char('Session Key', required=True)
     _field_mapping = {
