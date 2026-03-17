@@ -6,6 +6,8 @@
     <field name="model"/>
     <label name="operation"/>
     <field name="operation"/>
+    <label name="form_field"/>
+    <field name="form_field"/>
     <label name="number"/>
     <field name="number"/>
 </form>

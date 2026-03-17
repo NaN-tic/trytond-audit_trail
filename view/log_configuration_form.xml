@@ -1,5 +1,5 @@
 <form>
     <label name="notification_email"/>
     <field name="notification_email"/>
-    <field name="models"/>
+    <field name="models" colspan="4"/>
 </form>
