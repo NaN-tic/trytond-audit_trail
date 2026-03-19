@@ -2,17 +2,57 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "field:ir.session.event,create_date:"
-msgid "Create Date"
-msgstr "Data de creació"
+msgctxt "field:audit_trail.log,model:"
+msgid "Model"
+msgstr "Model"
 
-msgctxt "field:ir.session.event,create_uid:"
-msgid "Create User"
-msgstr "Usuari de creació"
+msgctxt "field:audit_trail.log,operation:"
+msgid "Operation"
+msgstr "Operació"
 
-msgctxt "field:ir.session.event,id:"
-msgid "ID"
-msgstr "ID"
+msgctxt "field:audit_trail.log,record_ids:"
+msgid "Record IDS"
+msgstr "IDs de registre"
+
+msgctxt "field:audit_trail.log,request:"
+msgid "Request"
+msgstr "Sol·licitud"
+
+msgctxt "field:audit_trail.log,type:"
+msgid "Type"
+msgstr "Tipus"
+
+msgctxt "field:audit_trail.log,user:"
+msgid "User"
+msgstr "Usuari"
+
+msgctxt "field:audit_trail.log.configuration,models:"
+msgid "Models"
+msgstr "Models"
+
+msgctxt "field:audit_trail.log.configuration,notification_email:"
+msgid "Notification Email"
+msgstr "Correu electrònic de notificació"
+
+msgctxt "field:audit_trail.log.configuration.model,configuration:"
+msgid "Configuration"
+msgstr "Configuració"
+
+msgctxt "field:audit_trail.log.configuration.model,field:"
+msgid "Field"
+msgstr "Camp"
+
+msgctxt "field:audit_trail.log.configuration.model,model:"
+msgid "Model"
+msgstr "Model"
+
+msgctxt "field:audit_trail.log.configuration.model,number:"
+msgid "Number"
+msgstr "Número"
+
+msgctxt "field:audit_trail.log.configuration.model,operation:"
+msgid "Operation"
+msgstr "Operació"
 
 msgctxt "field:ir.session.event,key:"
 msgid "Session Key"
@@ -26,33 +66,129 @@ msgctxt "field:ir.session.event,logout:"
 msgid "Logout Date"
 msgstr "Data de desconexió"
 
-msgctxt "field:ir.session.event,rec_name:"
-msgid "Name"
-msgstr "Nom"
-
 msgctxt "field:ir.session.event,user:"
 msgid "User"
 msgstr "Usuari"
 
-msgctxt "field:ir.session.event,write_date:"
-msgid "Write Date"
-msgstr "Data de modificación"
+msgctxt "help:audit_trail.log.configuration.model,field:"
+msgid ""
+"Field used to detect when a form record is opened. Leave empty to log "
+"all requests, including list views."
+msgstr ""
+"Camp que s'utilitza per detectar quan s'obre un registre de formulari. "
+"Deixeu-ho en blanc per registrar totes les sol·licituds, incloses les "
+"visualitzacions de llista."
 
-msgctxt "field:ir.session.event,write_uid:"
-msgid "Write User"
-msgstr "Usuari de modificació"
+msgctxt "model:audit_trail.log,name:"
+msgid "Log"
+msgstr "Registre"
+
+msgctxt "model:audit_trail.log.configuration,name:"
+msgid "Log Configuration"
+msgstr "Configuració del registre"
+
+msgctxt "model:audit_trail.log.configuration.model,name:"
+msgid "Log Configuration Model"
+msgstr "Model de configuració del registre"
+
+msgctxt "model:ir.action,name:act_log_configuration_form"
+msgid "Audit Trail Configuration"
+msgstr "Configuració del Registre d'auditoria"
+
+msgctxt "model:ir.action,name:act_log_form"
+msgid "Audit Trail"
+msgstr "Registre d'auditoria"
 
 msgctxt "model:ir.action,name:act_session_event_form"
 msgid "Session Events"
 msgstr "Events de sessió"
 
+msgctxt "model:ir.message,text:msg_body_audit_trail_notification"
+msgid ""
+"The following audit trail log counters exceeded their configured limits:"
+msgstr ""
+"Els següents comptadors de registre de pista d'auditoria han superat els "
+"límits configurats:"
+
+msgctxt "model:ir.message,text:msg_body_audit_trail_notification_line"
+msgid ""
+"User: %(user_name)s | Model: %(model)s | Logs: %(logs)s | Limit: %(limit)s |"
+" Operation: %(operation)s"
+msgstr ""
+"Usuari: %(user_name)s | Model: %(model)s | Registres: %(logs)s | Límit: "
+"%(limit)s | Operació: %(operation)s"
+
+msgctxt "model:ir.message,text:msg_subject_audit_trail_notification"
+msgid "Audit trail notification"
+msgstr "Notificació de registre d'auditoria"
+
 msgctxt "model:ir.session.event,name:"
 msgid "Session Event"
 msgstr "Event de sessió"
 
+msgctxt "model:ir.ui.menu,name:menu_audit_trail"
+msgid "Audit Trail"
+msgstr "Registre d'auditoria"
+
+msgctxt "model:ir.ui.menu,name:menu_log"
+msgid "Audit Trail"
+msgstr "Registre d'auditoria"
+
+msgctxt "model:ir.ui.menu,name:menu_log_configuration"
+msgid "Audit Trail Configuration"
+msgstr "Configuració"
+
 msgctxt "model:ir.ui.menu,name:menu_session_events"
 msgid "Session Events"
 msgstr "Events de sessió"
+
+msgctxt "selection:audit_trail.log,operation:"
+msgid "Delete"
+msgstr "Suprimeix"
+
+msgctxt "selection:audit_trail.log,operation:"
+msgid "Read"
+msgstr "Llegir"
+
+msgctxt "selection:audit_trail.log,operation:"
+msgid "Search"
+msgstr "Cerca"
+
+msgctxt "selection:audit_trail.log,operation:"
+msgid "Write"
+msgstr "Escriure"
+
+msgctxt "selection:audit_trail.log,type:"
+msgid "Model"
+msgstr "Model"
+
+msgctxt "selection:audit_trail.log,type:"
+msgid "Report"
+msgstr "Informe"
+
+msgctxt "selection:audit_trail.log,type:"
+msgid "Wizard"
+msgstr "Assistent"
+
+msgctxt "selection:audit_trail.log.configuration.model,operation:"
+msgid "Delete"
+msgstr "Suprimeix"
+
+msgctxt "selection:audit_trail.log.configuration.model,operation:"
+msgid "Read"
+msgstr "Llegir"
+
+msgctxt "selection:audit_trail.log.configuration.model,operation:"
+msgid "Search"
+msgstr "Cerca"
+
+msgctxt "selection:audit_trail.log.configuration.model,operation:"
+msgid "Write"
+msgstr "Escriure"
+
+msgctxt "selection:ir.cron,method:"
+msgid "Email Notify"
+msgstr "Notificacions auditoria"
 
 msgctxt "view:ir.session.event:"
 msgid "Session Event"
