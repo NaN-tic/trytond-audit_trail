@@ -1,6 +1,6 @@
 <tree editable="1">
     <field name="model"/>
     <field name="operation"/>
-    <field name="form_field"/>
+    <field name="field"/>
     <field name="number"/>
 </tree>

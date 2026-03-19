@@ -12,6 +12,7 @@ from trytond.config import config
 from trytond.cache import Cache
 from trytond.sendmail import sendmail
 from trytond.i18n import gettext
+from trytond.pyson import Eval
 
 
 OPERATIONS = [
@@ -131,8 +132,9 @@ class ConfigurationModel(ModelSQL, ModelView):
     configuration = fields.Many2One('audit_trail.log.configuration', 'Configuration')
     model = fields.Many2One('ir.model', 'Model')
     operation = fields.Selection(OPERATIONS, 'Operation')
-    form_field = fields.Char('Form Field',
-        help='Field name used to detect when a form record is opened. '
+    field = fields.Many2One('ir.model.field', 'Field',
+        domain=[('model_ref', '=', Eval('model'))],
+        help='Field used to detect when a form record is opened. '
         'Leave empty to log all requests, including list views.')
     number = fields.Integer('Number', required=True)
 
@@ -182,20 +184,20 @@ def custom_dispatch(request, pool, *args, **kwargs):
         if not model_operation_field:
             log_config = LogConfiguration(1)
             model_operation_field = [
-                (m.model.model, m.operation, m.form_field)
+                (m.model.model, m.operation, m.field.name if m.field else None)
                 for m in log_config.models if m.model]
             LogConfiguration._rules_cache.set('key', model_operation_field)
         request_data = getattr(request, 'json', None)
         if request_data is None:
             request_data = getattr(request, 'parsed_data', {})
         request_method = getattr(request, 'rpc_method', str(request))
-        for model, operation, form_field in model_operation_field:
+        for model, operation, field_name in model_operation_field:
             event = 'model.%s.' % model
             if operation:
                 event += operation
             if event not in request_method:
                 continue
-            if form_field and not _request_contains_field(request_data, form_field):
+            if field_name and not _request_contains_field(request_data, field_name):
                 continue
             Log = _pool.get('audit_trail.log')
             log = Log()
