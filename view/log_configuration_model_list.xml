@@ -1,5 +1,6 @@
 <tree editable="1">
     <field name="model"/>
     <field name="operation"/>
+    <field name="field"/>
     <field name="number"/>
 </tree>

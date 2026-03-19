@@ -2,17 +2,57 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "field:ir.session.event,create_date:"
-msgid "Create Date"
-msgstr "Fecha de creación"
+msgctxt "field:audit_trail.log,model:"
+msgid "Model"
+msgstr "Modelo"
 
-msgctxt "field:ir.session.event,create_uid:"
-msgid "Create User"
-msgstr "Usuario de creación"
+msgctxt "field:audit_trail.log,operation:"
+msgid "Operation"
+msgstr "Operación"
 
-msgctxt "field:ir.session.event,id:"
-msgid "ID"
-msgstr "ID"
+msgctxt "field:audit_trail.log,record_ids:"
+msgid "Record IDS"
+msgstr "Registro IDs"
+
+msgctxt "field:audit_trail.log,request:"
+msgid "Request"
+msgstr "Solicitud"
+
+msgctxt "field:audit_trail.log,type:"
+msgid "Type"
+msgstr "Tipo"
+
+msgctxt "field:audit_trail.log,user:"
+msgid "User"
+msgstr "Usuario"
+
+msgctxt "field:audit_trail.log.configuration,models:"
+msgid "Models"
+msgstr "Modelos"
+
+msgctxt "field:audit_trail.log.configuration,notification_email:"
+msgid "Notification Email"
+msgstr "Correo electrónico de notificación"
+
+msgctxt "field:audit_trail.log.configuration.model,configuration:"
+msgid "Configuration"
+msgstr "Configuración"
+
+msgctxt "field:audit_trail.log.configuration.model,field:"
+msgid "Field"
+msgstr "Campo"
+
+msgctxt "field:audit_trail.log.configuration.model,model:"
+msgid "Model"
+msgstr "Modelo"
+
+msgctxt "field:audit_trail.log.configuration.model,number:"
+msgid "Number"
+msgstr "Número"
+
+msgctxt "field:audit_trail.log.configuration.model,operation:"
+msgid "Operation"
+msgstr "Operación"
 
 msgctxt "field:ir.session.event,key:"
 msgid "Session Key"
@@ -26,33 +66,129 @@ msgctxt "field:ir.session.event,logout:"
 msgid "Logout Date"
 msgstr "Fecha de desconexión"
 
-msgctxt "field:ir.session.event,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
 msgctxt "field:ir.session.event,user:"
 msgid "User"
 msgstr "Usuario"
 
-msgctxt "field:ir.session.event,write_date:"
-msgid "Write Date"
-msgstr "Fecha de modificación"
+msgctxt "help:audit_trail.log.configuration.model,field:"
+msgid ""
+"Field used to detect when a form record is opened. Leave empty to log "
+"all requests, including list views."
+msgstr ""
+"Campo utilizado para detectar cuándo se abre un registro de formulario. "
+"Déjelo en blanco para registrar todas las solicitudes, incluidas las vistas "
+"de lista."
 
-msgctxt "field:ir.session.event,write_uid:"
-msgid "Write User"
-msgstr "Usuario de modificación"
+msgctxt "model:audit_trail.log,name:"
+msgid "Log"
+msgstr "Registro"
+
+msgctxt "model:audit_trail.log.configuration,name:"
+msgid "Log Configuration"
+msgstr "Configuración de registro"
+
+msgctxt "model:audit_trail.log.configuration.model,name:"
+msgid "Log Configuration Model"
+msgstr "Modelo de configuración de registro"
+
+msgctxt "model:ir.action,name:act_log_configuration_form"
+msgid "Audit Trail Configuration"
+msgstr "Configuración del registro de auditoría"
+
+msgctxt "model:ir.action,name:act_log_form"
+msgid "Audit Trail"
+msgstr "Registro de auditoría"
 
 msgctxt "model:ir.action,name:act_session_event_form"
 msgid "Session Events"
 msgstr "Eventos de sesión"
 
+msgctxt "model:ir.message,text:msg_body_audit_trail_notification"
+msgid ""
+"The following audit trail log counters exceeded their configured limits:"
+msgstr ""
+"Los siguientes contadores del registro de auditoría superaron sus límites "
+"configurados:"
+
+msgctxt "model:ir.message,text:msg_body_audit_trail_notification_line"
+msgid ""
+"User: %(user_name)s | Model: %(model)s | Logs: %(logs)s | Limit: %(limit)s |"
+" Operation: %(operation)s"
+msgstr ""
+"Usuario: %(user_name)s | Modelo: %(model)s | Registros: %(logs)s | Límite: "
+"%(limit)s | Operación: %(operation)s"
+
+msgctxt "model:ir.message,text:msg_subject_audit_trail_notification"
+msgid "Audit trail notification"
+msgstr "Notificación de registro de auditoría"
+
 msgctxt "model:ir.session.event,name:"
 msgid "Session Event"
 msgstr "Evento de sesión"
 
+msgctxt "model:ir.ui.menu,name:menu_audit_trail"
+msgid "Audit Trail"
+msgstr "Registro de auditoría"
+
+msgctxt "model:ir.ui.menu,name:menu_log"
+msgid "Audit Trail"
+msgstr "Registro de auditoría"
+
+msgctxt "model:ir.ui.menu,name:menu_log_configuration"
+msgid "Audit Trail Configuration"
+msgstr "Configuración"
+
 msgctxt "model:ir.ui.menu,name:menu_session_events"
 msgid "Session Events"
 msgstr "Eventos de sesión"
+
+msgctxt "selection:audit_trail.log,operation:"
+msgid "Delete"
+msgstr "Borrar"
+
+msgctxt "selection:audit_trail.log,operation:"
+msgid "Read"
+msgstr "Leer"
+
+msgctxt "selection:audit_trail.log,operation:"
+msgid "Search"
+msgstr "Buscar"
+
+msgctxt "selection:audit_trail.log,operation:"
+msgid "Write"
+msgstr "Escribir"
+
+msgctxt "selection:audit_trail.log,type:"
+msgid "Model"
+msgstr "Modelo"
+
+msgctxt "selection:audit_trail.log,type:"
+msgid "Report"
+msgstr "Informe"
+
+msgctxt "selection:audit_trail.log,type:"
+msgid "Wizard"
+msgstr "Asistente"
+
+msgctxt "selection:audit_trail.log.configuration.model,operation:"
+msgid "Delete"
+msgstr "Borrar"
+
+msgctxt "selection:audit_trail.log.configuration.model,operation:"
+msgid "Read"
+msgstr "Leer"
+
+msgctxt "selection:audit_trail.log.configuration.model,operation:"
+msgid "Search"
+msgstr "Buscar"
+
+msgctxt "selection:audit_trail.log.configuration.model,operation:"
+msgid "Write"
+msgstr "Escribir"
+
+msgctxt "selection:ir.cron,method:"
+msgid "Email Notify"
+msgstr "Notificaciones auditoría"
 
 msgctxt "view:ir.session.event:"
 msgid "Session Event"

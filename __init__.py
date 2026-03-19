@@ -12,4 +12,5 @@ def register():
         log.Log,
         log.Configuration,
         log.ConfigurationModel,
+        log.Cron,
         module='audit_trail', type_='model')
