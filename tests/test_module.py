@@ -58,7 +58,7 @@ class AuditTrailTestCase(ModuleTestCase):
         Model = pool.get('ir.model')
         User = pool.get('res.user')
 
-        model, = Model.search([('model', '=', 'res.user')], limit=1)
+        model, = Model.search([('name', '=', 'res.user')], limit=1)
         user1, user2 = User.create([{
                     'name': 'User One',
                     'login': 'user_one',
