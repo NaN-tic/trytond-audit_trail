@@ -8,7 +8,7 @@ from trytond.model import ModelSQL, ModelView, fields, ModelSingleton
 from trytond.pool import Pool, PoolMeta
 import trytond.protocols.dispatcher
 from trytond.transaction import Transaction
-from trytond.config import config
+import trytond.config as config
 from trytond.cache import Cache
 from trytond.sendmail import sendmail
 from trytond.i18n import gettext
