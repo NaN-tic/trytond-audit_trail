@@ -139,9 +139,9 @@ class ConfigurationModel(ModelSQL, ModelView):
     number = fields.Integer('Number', required=True)
 
     @classmethod
-    def write(cls, ids, vals):
+    def write(cls, records, values, *args):
         LogConfiguration = Pool().get('audit_trail.log.configuration')
-        res = super(ConfigurationModel, cls).write(ids, vals)
+        res = super(ConfigurationModel, cls).write(records, values, *args)
         LogConfiguration._rules_cache.clear()
         return res
 
