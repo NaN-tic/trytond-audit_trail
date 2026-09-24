@@ -40,11 +40,7 @@ this repository contains the full copyright notices and license terms. -->
         </record>
 
         <menuitem name="Session Events" parent="res.menu_res"
-            action="act_session_event_form" id="menu_session_events"/>
+            action="act_session_event_form" id="menu_session_events" administration="True"/>
 
-        <record model="ir.ui.menu-res.group" id="menu_event_group_admin">
-            <field name="menu" ref="menu_session_events"/>
-            <field name="group" ref="res.group_admin"/>
-        </record>
     </data>
 </tryton>
