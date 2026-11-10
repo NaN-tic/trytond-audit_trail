@@ -102,7 +102,7 @@ class Log(ModelSQL, ModelView):
                 operation = model.operation
             line = gettext(
                 'audit_trail.msg_body_audit_trail_notification_line',
-                user_name=user_name, model=model.model.model,
+                user_name=user_name, model=model.model.name,
                 logs=count, limit=model.number, operation=operation)
             lines.append(line)
 
@@ -184,7 +184,7 @@ def custom_dispatch(request, pool, *args, **kwargs):
         if not model_operation_field:
             log_config = LogConfiguration(1)
             model_operation_field = [
-                (m.model.model, m.operation, m.field.name if m.field else None)
+                (m.model.name, m.operation, m.field.name if m.field else None)
                 for m in log_config.models if m.model]
             LogConfiguration._rules_cache.set('key', model_operation_field)
         request_data = getattr(request, 'json', None)
@@ -207,7 +207,7 @@ def custom_dispatch(request, pool, *args, **kwargs):
             log.request = str(request_data)
             params = request_data.get('params', []) if request_data else []
             log.record_ids = str(params[0]) if params else None
-            log.model = _pool.get('ir.model').search([('model', '=', model)])[0]
+            log.model = _pool.get('ir.model').search([('name', '=', model)])[0]
             log.save()
     return result
 
